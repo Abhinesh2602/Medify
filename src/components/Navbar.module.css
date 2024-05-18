@@ -1,0 +1,68 @@
+.wrapper {
+  height: 96px;
+  background: #fff;
+  box-shadow: 0px 9px 12px 0px rgba(32, 74, 105, 0.07);
+  padding: 0 135px;
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 23px;
+  height: 23.019px;
+}
+
+.navItemContainer {
+  display: flex;
+  width: 912px;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 40px;
+}
+
+.navItemContainer p {
+  color: var(--tertiary-color);
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.navItemContainer button {
+  all: unset;
+  background-color: var(--primary-color);
+  border-radius: 8px;
+  display: flex;
+  width: 130px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: var(--White, #fff);
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.28px;
+}
+
+.logoContainer {
+  display: flex;
+  gap: 4px;
+  justify-content: space-between;
+}
+
+.logoContainer .logoTitle {
+  color: var(--primary-color);
+  font-family: Poppins;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.36px;
+  padding-left: 10px;
+}

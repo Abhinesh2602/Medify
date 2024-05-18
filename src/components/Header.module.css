@@ -1,0 +1,17 @@
+.wrapper {
+  height: 136px;
+}
+
+.message {
+  background-color: var(--primary-color);
+  color: #fff;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+}
