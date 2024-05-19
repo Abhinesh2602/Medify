@@ -6,6 +6,9 @@ import MedicalSpecialist from "./MedicalSpecialist";
 import PatientCaring from "./PatientCaring";
 import LatestNews from "./LatestNews";
 import OurFamily from "./OurFamily.jsx";
+import Faqs from "../components/Faqs.jsx";
+import DownloaMedifyApp from "../components/DownloaMedifyApp.jsx";
+import Footer from "../components/Footer.jsx";
 
 function Home() {
   const home = true;
@@ -19,6 +22,9 @@ function Home() {
       <PatientCaring />
       <LatestNews />
       <OurFamily />
+      <Faqs />
+      <DownloaMedifyApp />
+      <Footer />
     </div>
   );
 }

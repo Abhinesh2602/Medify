@@ -1,0 +1,91 @@
+.wrapper {
+  background: #1b3c74;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 135px 30px 162px;
+  box-sizing: border-box;
+  height: 424px;
+  width: 100%;
+  justify-content: center;
+  gap: 15px;
+}
+
+.container {
+  display: flex;
+  gap: 40px;
+}
+
+.logoContainer {
+  display: flex;
+  align-content: center;
+  gap: 5px;
+  margin-top: 50px;
+}
+
+.logo {
+  width: 23px;
+  height: 23.019px;
+}
+
+.logoContainer .logoTitle {
+  color: var(--primary-color);
+  font-family: Poppins;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.36px;
+  padding-left: 10px;
+}
+
+.socialContainer {
+  width: 358.81px;
+  height: 235px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.socialFlex {
+  display: flex;
+  gap: 10px;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.menuItem {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  width: 231.82px;
+}
+
+.menuitemText {
+  color: #fff;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px; /* 175% */
+}
+
+.sectionDivider {
+  width: 1143px;
+  margin-top: 44px;
+  margin-bottom: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.websiteCredits {
+  color: #fff;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px; /* 175% */
+}

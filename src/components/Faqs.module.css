@@ -1,0 +1,170 @@
+.wrapper {
+  height: 713px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 1140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.subHeading {
+  color: #2aa7ff;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 27px; /* 168.75% */
+}
+
+.title {
+  color: #1b3c74;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 67px; /* 139.583% */
+}
+
+.infoContainer {
+  display: flex;
+  column-gap: 87px;
+  width: 1120px;
+  height: 575.84px;
+  flex-shrink: 0;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+.imageContainer {
+  width: 500px;
+  height: 479.84px;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.questionsContainer {
+  width: 484px;
+  height: 499.84px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.happypatients {
+  border-radius: 8px;
+  border: 10px solid #fff;
+  box-shadow: 0px 15px 55px -10px rgba(0, 0, 0, 0.09);
+
+  flex-shrink: 0;
+  width: 500px;
+  height: 479.84px;
+  box-sizing: border-box;
+  background-size: contain;
+  object-fit: cover;
+}
+
+.question {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  align-items: center;
+  justify-content: space-between;
+  color: #1b3c74;
+  font-family: Poppins;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 30px; /* 166.667% */
+  padding: 20px 30.75px 20px 15px;
+}
+
+.happyContainer {
+  width: 241.93px;
+  height: 104.59px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0px 15px 35px -5px rgba(0, 0, 0, 0.07);
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  padding: 20px;
+  align-items: center;
+  box-sizing: border-box;
+  position: absolute;
+  top: 270px;
+  left: -70px;
+}
+
+.smileImage {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+}
+
+.heartImage {
+  display: flex;
+  width: 80px;
+  height: 80px;
+  padding: 19.84px 0px 20.16px 0px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.heartImageContainer {
+  position: absolute;
+  right: -35px;
+  top: 90px;
+  display: flex;
+  width: 80px;
+  height: 80px;
+  padding: 19.84px 0px 20.16px 0px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 40px;
+  background: #fff;
+  box-sizing: border-box;
+  box-shadow: 0px 15px 25px 0px rgba(0, 0, 0, 0.06);
+}
+
+.happyContainerTitle {
+  color: #1b3c74;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 33.6px; /* 140% */
+}
+
+.happyContainerSubheading {
+  color: #77829d;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px; /* 164.706% */
+}
+
+.happyContainerFlex {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
