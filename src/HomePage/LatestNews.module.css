@@ -1,0 +1,127 @@
+.wrapper {
+  height: 703px;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 1140px;
+  height: 677.77px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.subHeading {
+  color: #2aa7ff;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 27px; /* 168.75% */
+}
+
+.title {
+  color: #1b3c74;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 67px; /* 139.583% */
+}
+
+.news_Cards {
+  display: flex;
+  padding-top: 35px;
+  gap: 20px;
+}
+
+.news_Card {
+  width: 363.33px;
+  height: 477.77px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 0px 0px 10px 10px;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  background: #fff;
+  box-sizing: border-box;
+  padding-bottom: 19.77px;
+}
+
+.newsImage {
+  width: 100%;
+  height: auto;
+  border-radius: 8px 8px 0 0;
+}
+
+.cardInfo {
+  display: flex;
+  flex-direction: column;
+  justify-items: start;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.cardCatagory {
+  color: #77829d;
+  font-family: Inter;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 27px;
+}
+
+.cardCatagoryDetails {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cardCatagoryDetails__divider {
+  width: 2px;
+  height: 15px;
+  background: #ddd;
+}
+
+.cardDescription {
+  color: #1b3c74;
+  font-family: Poppins;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  width: 100%;
+  padding-top: 10px;
+}
+
+.doctorProfile {
+  border-radius: 30px;
+  width: 32px;
+  height: 32px;
+}
+
+.doctorName {
+  color: #1b3c74;
+  font-family: Poppins;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 27px;
+}
+
+.profileContainer {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding-top: 15px;
+}

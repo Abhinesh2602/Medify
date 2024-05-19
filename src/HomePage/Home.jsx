@@ -5,6 +5,7 @@ import OfferCards from "./OfferCards";
 import MedicalSpecialist from "./MedicalSpecialist";
 import PatientCaring from "./PatientCaring";
 import LatestNews from "./LatestNews";
+import OurFamily from "./OurFamily.jsx";
 
 function Home() {
   const home = true;
@@ -17,6 +18,7 @@ function Home() {
       <MedicalSpecialist />
       <PatientCaring />
       <LatestNews />
+      <OurFamily />
     </div>
   );
 }
