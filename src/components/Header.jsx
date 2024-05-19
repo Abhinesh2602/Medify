@@ -1,7 +1,7 @@
 import styles from "./Header.module.css";
 import { Navbar } from "./Navbar";
 
-export const Header = () => {
+export const Header = ({ home }) => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.message}>
@@ -9,7 +9,7 @@ export const Header = () => {
         will always be our priority, so we follow the best practices for
         cleanliness.
       </div>
-      <Navbar />
+      <Navbar home={home} />
     </div>
   );
 };

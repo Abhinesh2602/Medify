@@ -1,5 +1,6 @@
 import styles from "./Navbar.module.css";
 import medifyLogo from "../assets/medifylogo.svg";
+import Button from "./Button";
 export const Navbar = () => {
   return (
     <div className={styles.wrapper}>
@@ -16,7 +17,7 @@ export const Navbar = () => {
         <p>Surgeries</p>
         <p>Software for Provider</p>
         <p>Facilities</p>
-        <button>My Bookings</button>
+        <Button>My Bookings</Button>
       </div>
     </div>
   );
