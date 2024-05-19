@@ -1,6 +1,6 @@
 import { Header } from "../components/Header";
 import Hero from "./Hero";
-import SearchSection from "./SearchSection";
+import OfferCards from "./OfferCards";
 
 function Home() {
   const home = true;
@@ -8,6 +8,7 @@ function Home() {
     <div>
       <Header home={home} />
       <Hero> </Hero>
+      <OfferCards />
     </div>
   );
 }
