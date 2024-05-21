@@ -7,7 +7,7 @@ import classNames from "classnames";
 import arrow from "../assets/AppointmentDetails/arrow.svg";
 import { useState } from "react";
 
-function MedicalCard() {
+function MedicalCard({ hospitalDetails, BookNow }) {
   const [active, setActive] = useState(false);
 
   return (
@@ -53,8 +53,10 @@ function MedicalCard() {
               </div>
             </div>
           </div>
-          {/* <BookedDateTime /> */}
-          <BookNowContainer setActive={setActive} active={active} />
+          {hospitalDetails && <BookedDateTime />}
+          {BookNow && (
+            <BookNowContainer setActive={setActive} active={active} />
+          )}
         </div>
       </div>
       {active && <Appointment />}

@@ -6,6 +6,13 @@
   position: absolute;
 }
 
+.mybookingwrapper {
+  width: 1140px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
 .container {
   width: 1166px;
   padding: 27px 24px;
@@ -18,11 +25,20 @@
   box-shadow: 6px 6px 35px 0px rgba(16, 40, 81, 0.11);
 }
 
+.mybookingContainer {
+  width: 780px;
+}
+
 .formContainer {
   display: flex;
   flex-direction: row;
   width: 100%;
   justify-content: space-between; /* Align items with space between */
+}
+
+.formMybookingHosp {
+  gap: 40px;
+  box-sizing: border-box;
 }
 
 .stateInput {
@@ -82,6 +98,20 @@
   line-height: normal;
   letter-spacing: 0.32px;
   background: var(--Primary, #2aa8ff);
+  cursor: pointer; /* Ensure the button has a pointer cursor */
+  position: relative; /* Position relative to place the icon */
+}
+
+.buttonSearch::before {
+  content: "";
+  position: absolute;
+  left: 35px; /* Adjust the left position as needed */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px; /* Adjust the width of the icon as needed */
+  height: 24px; /* Adjust the height of the icon as needed */
+  background: url("../assets/DetailPage/searchicon.svg") no-repeat center center;
+  background-size: cover; /* Ensure the icon covers the space */
 }
 
 .inputWrapper {
