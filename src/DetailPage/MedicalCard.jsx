@@ -5,10 +5,17 @@ import stylesBook from "./Appointment.module.css";
 import greenPill from "../assets/AppointmentDetails/greenPill.svg";
 import classNames from "classnames";
 import arrow from "../assets/AppointmentDetails/arrow.svg";
+import { useState } from "react";
 
 function MedicalCard() {
+  const [active, setActive] = useState(false);
+
   return (
-    <div className={styles.MedicalCard}>
+    <div
+      className={classNames(styles.MedicalCard, {
+        [styles.MedicalCardFalse]: !active,
+      })}
+    >
       <div className={styles.MedicalCardContainer}>
         <div className={styles.HospitalLocationDetailsContainer}>
           <div className={styles.HospitalLocationDetails_icon}>
@@ -49,13 +56,23 @@ function MedicalCard() {
 
           <div className={styles.bookNowContainer}>
             <span className={styles.bookNowTitle}>Available Today</span>
-            <button className={styles.buttonLocationDetails}>
+            <button
+              className={styles.buttonLocationDetails}
+              onClick={() => setActive(!active)}
+            >
               Book Free Center Visit
             </button>
           </div>
         </div>
       </div>
+      {active && <Appointment />}
+    </div>
+  );
+}
 
+function Appointment() {
+  return (
+    <>
       <div className={stylesBook.appointmentWrapper}>
         <div className={stylesBook.borderTop}>
           <img src={greenPill} alt="" className={styles.greenPill} />
@@ -116,7 +133,7 @@ function MedicalCard() {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
