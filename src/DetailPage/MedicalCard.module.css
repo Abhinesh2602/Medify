@@ -4,14 +4,21 @@
   background: #fff;
   padding: 24px;
   gap: 14px;
-  height: 220px;
+  height: 570px;
+  flex-direction: column;
   align-items: flex-start;
 }
-
+.MedicalCardContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+  padding-bottom: 24px;
+}
 .HospitalLocationDetailsContainer {
   display: flex;
   height: 100%;
-  width: 488px;
+  width: 100%;
   gap: 15px;
 }
 
@@ -150,6 +157,7 @@
 
 .bookNowContainer {
   height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;

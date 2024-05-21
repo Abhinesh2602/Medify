@@ -1,11 +1,15 @@
 import styles from "./MedicalCard.module.css";
 import like from "../assets/DetailPage/like.svg";
 import hospitalicon from "../assets/DetailPage/hospitalicon.svg";
+import stylesBook from "./Appointment.module.css";
+import greenPill from "../assets/AppointmentDetails/greenPill.svg";
+import classNames from "classnames";
+import arrow from "../assets/AppointmentDetails/arrow.svg";
 
 function MedicalCard() {
   return (
-    <div>
-      <div className={styles.MedicalCard}>
+    <div className={styles.MedicalCard}>
+      <div className={styles.MedicalCardContainer}>
         <div className={styles.HospitalLocationDetailsContainer}>
           <div className={styles.HospitalLocationDetails_icon}>
             <img src={hospitalicon} alt="hopitalicon" />
@@ -42,12 +46,74 @@ function MedicalCard() {
               </div>
             </div>
           </div>
+
+          <div className={styles.bookNowContainer}>
+            <span className={styles.bookNowTitle}>Available Today</span>
+            <button className={styles.buttonLocationDetails}>
+              Book Free Center Visit
+            </button>
+          </div>
         </div>
-        <div className={styles.bookNowContainer}>
-          <span className={styles.bookNowTitle}>Available Today</span>
-          <button className={styles.buttonLocationDetails}>
-            Book Free Center Visit
+      </div>
+
+      <div className={stylesBook.appointmentWrapper}>
+        <div className={stylesBook.borderTop}>
+          <img src={greenPill} alt="" className={styles.greenPill} />
+        </div>
+
+        <div className={stylesBook.slotFullDetails}>
+          <button className={stylesBook.arrowCircle}>
+            <img src={arrow} alt="arrow" />
           </button>
+          <div
+            className={classNames(
+              stylesBook.slotContainer,
+              stylesBook.slotBlueActive
+            )}
+          >
+            <span className={stylesBook.slotTitle}>Today</span>
+            <span className={stylesBook.slotsAvailableText}>
+              11 slots available
+            </span>
+          </div>
+          <div className={stylesBook.slotContainer}>
+            <span className={stylesBook.slotTitle}>Today</span>
+            <span className={stylesBook.slotsAvailableText}>
+              11 slots available
+            </span>
+          </div>
+          <div className={stylesBook.slotContainer}>
+            <span className={stylesBook.slotTitle}>Today</span>
+            <span className={stylesBook.slotsAvailableText}>
+              11 slots available
+            </span>
+          </div>
+          <button className={stylesBook.arrowCircle}>
+            <img src={arrow} alt="arrow" className={stylesBook.arrowRight} />
+          </button>
+        </div>
+
+        <div className={stylesBook.dayDetailsContainer}>
+          <div className={stylesBook.timePeriods}>
+            <span>Afternoon</span>
+          </div>
+          <div className={stylesBook.timeContainer}>
+            <div className={stylesBook.time}>
+              <span>12:00</span>
+            </div>
+            <div className={stylesBook.time}>
+              <span>12:00</span>
+            </div>
+            <div className={stylesBook.time}>
+              <span>12:00</span>
+            </div>
+            <div className={stylesBook.time}>
+              <span>12:00</span>
+            </div>
+            <div className={stylesBook.time}>
+              <span>12:00</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
