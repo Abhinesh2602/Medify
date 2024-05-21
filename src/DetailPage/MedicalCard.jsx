@@ -53,19 +53,25 @@ function MedicalCard() {
               </div>
             </div>
           </div>
-
-          <div className={styles.bookNowContainer}>
-            <span className={styles.bookNowTitle}>Available Today</span>
-            <button
-              className={styles.buttonLocationDetails}
-              onClick={() => setActive(!active)}
-            >
-              Book Free Center Visit
-            </button>
-          </div>
+          {/* <BookedDateTime /> */}
+          <BookNowContainer setActive={setActive} active={active} />
         </div>
       </div>
       {active && <Appointment />}
+    </div>
+  );
+}
+
+function BookNowContainer({ setActive, active }) {
+  return (
+    <div className={styles.bookNowContainer}>
+      <span className={styles.bookNowTitle}>Available Today</span>
+      <button
+        className={styles.buttonLocationDetails}
+        onClick={() => setActive(!active)}
+      >
+        Book Free Center Visit
+      </button>
     </div>
   );
 }
@@ -115,25 +121,34 @@ function Appointment() {
             <span>Afternoon</span>
           </div>
           <div className={stylesBook.timeContainer}>
-            <div className={stylesBook.time}>
-              <span>12:00</span>
-            </div>
-            <div className={stylesBook.time}>
-              <span>12:00</span>
-            </div>
-            <div className={stylesBook.time}>
-              <span>12:00</span>
-            </div>
-            <div className={stylesBook.time}>
-              <span>12:00</span>
-            </div>
-            <div className={stylesBook.time}>
-              <span>12:00</span>
-            </div>
+            <Time />
+            <Time />
+            <Time />
+            <Time />
+            <Time />
           </div>
         </div>
       </div>
     </>
+  );
+}
+
+function Time() {
+  return (
+    <div className={stylesBook.time}>
+      <span>12:00</span>
+    </div>
+  );
+}
+
+function BookedDateTime() {
+  return (
+    <div className={styles.bookedContainer}>
+      <Time />
+      <div className={styles.bookedDate}>
+        <span>20 April 2024</span>
+      </div>
+    </div>
   );
 }
 
