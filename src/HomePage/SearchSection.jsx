@@ -15,6 +15,7 @@ function SearchSection() {
           <div className={styles.inputWrapper}>
             <input type="text" className={styles.input} placeholder="State" />
           </div>
+
           <div className={styles.inputWrapper}>
             <input
               className={styles.input}
