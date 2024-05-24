@@ -1,23 +1,30 @@
 import styles from "./Navbar.module.css";
 import medifyLogo from "../assets/medifylogo.svg";
-import Button from "./Button";
+import { Link } from "react-router-dom";
+
 export const Navbar = () => {
   return (
     <div className={styles.wrapper}>
-      <div className={styles.logoContainer}>
+      <Link to="/" className={styles.logoContainer}>
         <div className={styles.logo}>
           <img src={medifyLogo} alt="Medify Logo" />
         </div>
         <div className={styles.logoTitle}>Medify</div>
-      </div>
+      </Link>
       <div className={styles.navItemContainer}>
-        <p>Find Doctors</p>
-        <p>Hospitals</p>
-        <p>Medicines </p>
-        <p>Surgeries</p>
-        <p>Software for Provider</p>
-        <p>Facilities</p>
-        <Button>My Bookings</Button>
+        <Link to="/detail" className={styles.navItem}>
+          Find Doctors
+        </Link>
+        <span className={styles.navItem}>Hospitals</span>
+        <span className={styles.navItem}>Medicines </span>
+        <span className={styles.navItem}>Surgeries</span>
+        <span className={styles.navItem}>Software for Provider</span>
+        <span className={styles.navItem}>Facilities</span>
+        <Link to="/my-bookings" className={styles.buttonText}>
+          <button className={styles.navButton}>
+            <span>My Bookings</span>
+          </button>
+        </Link>
       </div>
     </div>
   );

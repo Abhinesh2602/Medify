@@ -5,6 +5,18 @@
   border-radius: 0 0 16px 16px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   background: linear-gradient(92deg, #2aa7ff 1.4%, #0c8ce5 100.57%);
+}
+
+.textStyles {
+  color: #fff;
+  text-align: center;
+  font-family: Ubuntu;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  width: 403px;
+  line-height: normal;
+  margin-left: 90px;
 }

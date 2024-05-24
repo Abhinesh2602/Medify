@@ -1,6 +1,10 @@
 import styles from "./HeaderBlue.module.css";
-function HeaderBlue() {
-  return <div className={styles.wrapper}></div>;
+function HeaderBlue({ children }) {
+  return (
+    <div className={styles.wrapper}>
+      <span className={styles.textStyles}>{children}</span>
+    </div>
+  );
 }
 
 export default HeaderBlue;
