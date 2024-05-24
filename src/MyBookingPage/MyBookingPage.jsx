@@ -1,5 +1,4 @@
 import HeaderBlue from "../DetailPage/HeaderBlue";
-import MedicalCard from "../DetailPage/MedicalCard";
 import SearchBar from "../DetailPage/SearchBar";
 import DownloaMedifyApp from "../components/DownloaMedifyApp";
 import { Navbar } from "../components/Navbar";
