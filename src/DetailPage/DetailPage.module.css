@@ -3,3 +3,8 @@
   flex-direction: column;
   align-items: center;
 }
+
+/* toastStyles.css */
+.custom_toast_container .Toastify__toast {
+  background-color: #2aa7ff !important;
+}

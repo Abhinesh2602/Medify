@@ -1,20 +1,22 @@
 import styles from "./MedicalCenterDetails.module.css";
 import correct from "../assets/DetailPage/correct.svg";
 import FreeAppointment from "../assets/DetailPage/FreeAppointment.png";
-import MedicalCard from "./MedicalCard";
+import { MedicalCard } from "./MedicalCard";
+import { useMedify } from "../services/MedifyContextProvider";
+import formatText from "../helpers/formattext";
 
 function MeidicalCenterDetails() {
+  const { hospitals } = useMedify();
+
   const BookNow = true;
   return (
     <div className={styles.wrapper}>
       <div className={styles.container}>
         <div className={styles.MedicalDetails}>
           <HospitalCountDetails />
-          <MedicalCard BookNow={BookNow} />
-          <MedicalCard BookNow={BookNow} />
-          <MedicalCard BookNow={BookNow} />
-          <MedicalCard BookNow={BookNow} />
-          <MedicalCard BookNow={BookNow} />
+          {hospitals.map((hospital, key) => (
+            <MedicalCard BookNow={BookNow} hospital={hospital} key={key} />
+          ))}
         </div>
         <div>
           <img
@@ -29,10 +31,22 @@ function MeidicalCenterDetails() {
 }
 
 function HospitalCountDetails() {
+  const { hospitals, selectedCity } = useMedify();
+
+  const hospitalCount = hospitals.length;
+
+  // const words = selectedCity.split(" ");
+  // const formattedCity = words.map(
+  //   (word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+  // );
+  // const capitalizedCity = formattedCity.join(" ");
+
+  const capitalizedCity = formatText(selectedCity);
+
   return (
     <div className={styles.HospitalCountDetails}>
       <span className={styles.HospitalCountDetails_title}>
-        15 medical centers available in Alaska
+        {hospitalCount} medical centers available in {capitalizedCity}
       </span>
       <div className={styles.HospitalCountDetails__subHeading}>
         <img src={correct} alt="correct" />

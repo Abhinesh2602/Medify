@@ -4,11 +4,41 @@ import hospitalicon from "../assets/DetailPage/hospitalicon.svg";
 import stylesBook from "./Appointment.module.css";
 import greenPill from "../assets/AppointmentDetails/greenPill.svg";
 import classNames from "classnames";
-import arrow from "../assets/AppointmentDetails/arrow.svg";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import formattext from "./../helpers/formattext";
+import Dateswiper from "./DateSwiper";
+import { useMedify } from "../services/MedifyContextProvider";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-function MedicalCard({ hospitalDetails, BookNow }) {
+function MedicalCard({ hospital }) {
   const [active, setActive] = useState(false);
+
+  const { setBookedHospital, book } = useMedify();
+
+  const hospitalName = hospital["Hospital Name"]
+    .split(" ")
+    .slice(0, 3)
+    .join(" ");
+  const address = hospital.Address;
+  const hospitalType = hospital["Hospital Type"];
+  const hospitalRating = hospital["Hospital overall rating"];
+  const zipcode = hospital["ZIP Code"];
+  const city = formattext(hospital.City);
+  const state = hospital.State;
+
+  useEffect(() => {
+    const bookHospDetails = {
+      hospitalName: hospitalName,
+      address: address,
+      hospitalType: hospitalType,
+      hospitalRating: hospitalRating,
+      zipcode: zipcode,
+      city: city,
+      state: state,
+    };
+    setBookedHospital(bookHospDetails);
+  }, [book, hospital, setBookedHospital]);
 
   return (
     <div
@@ -23,14 +53,14 @@ function MedicalCard({ hospitalDetails, BookNow }) {
           </div>
           <div className={styles.HospitalLocationDetails_wrapper}>
             <span className={styles.HospitalLocationDetails_title}>
-              Fortis Hospital Richmond Road
+              {hospitalName}
             </span>
             <div className={styles.HospitalLocationDetail_Container}>
               <span className={styles.HospitalLocation_Subheading}>
-                Banglore, Karnataka
+                {city}, {state}
               </span>
               <span className={styles.HospitalLocation_Description}>
-                Smilessence Center for Advanced Dentistry + 1 more
+                {address}, {zipcode}
               </span>
             </div>
             <div className={styles.HospitalOfferDetails_Container}>
@@ -43,20 +73,21 @@ function MedicalCard({ hospitalDetails, BookNow }) {
               </span>
             </div>
             <div className={styles.divider}>
-              <div className={styles.HospitalLocationDetails__likeContainer}>
-                <img
-                  src={like}
-                  alt="like"
-                  className={styles.HospitalLocationDetails__like}
-                />
-                <span>5</span>
-              </div>
+              {hospitalRating !== "Not Available" ? (
+                <div className={styles.HospitalLocationDetails__likeContainer}>
+                  <img
+                    src={like}
+                    alt="like"
+                    className={styles.HospitalLocationDetails__like}
+                  />
+                  <span>{hospitalRating}</span>
+                </div>
+              ) : (
+                ""
+              )}
             </div>
           </div>
-          {hospitalDetails && <BookedDateTime />}
-          {BookNow && (
-            <BookNowContainer setActive={setActive} active={active} />
-          )}
+          <BookNowContainer setActive={setActive} active={active} />
         </div>
       </div>
       {active && <Appointment />}
@@ -79,6 +110,25 @@ function BookNowContainer({ setActive, active }) {
 }
 
 function Appointment() {
+  const { setBook, bookedHospitalTime } = useMedify();
+
+  function handleBook() {
+    if (bookedHospitalTime) {
+      setBook((book) => !book);
+    } else {
+      toast.error("Please Fill Details!", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    }
+  }
+
   return (
     <>
       <div className={stylesBook.appointmentWrapper}>
@@ -86,36 +136,15 @@ function Appointment() {
           <img src={greenPill} alt="" className={styles.greenPill} />
         </div>
 
-        <div className={stylesBook.slotFullDetails}>
-          <button className={stylesBook.arrowCircle}>
-            <img src={arrow} alt="arrow" />
-          </button>
-          <div
-            className={classNames(
-              stylesBook.slotContainer,
-              stylesBook.slotBlueActive
-            )}
-          >
-            <span className={stylesBook.slotTitle}>Today</span>
-            <span className={stylesBook.slotsAvailableText}>
-              11 slots available
-            </span>
+        <Dateswiper />
+
+        <div className={stylesBook.dayDetailsContainer}>
+          <div className={stylesBook.timePeriods}>
+            <span>Morning</span>
           </div>
-          <div className={stylesBook.slotContainer}>
-            <span className={stylesBook.slotTitle}>Today</span>
-            <span className={stylesBook.slotsAvailableText}>
-              11 slots available
-            </span>
+          <div className={stylesBook.timeContainer}>
+            <Time time={"11:30 AM"} />
           </div>
-          <div className={stylesBook.slotContainer}>
-            <span className={stylesBook.slotTitle}>Today</span>
-            <span className={stylesBook.slotsAvailableText}>
-              11 slots available
-            </span>
-          </div>
-          <button className={stylesBook.arrowCircle}>
-            <img src={arrow} alt="arrow" className={stylesBook.arrowRight} />
-          </button>
         </div>
 
         <div className={stylesBook.dayDetailsContainer}>
@@ -123,35 +152,78 @@ function Appointment() {
             <span>Afternoon</span>
           </div>
           <div className={stylesBook.timeContainer}>
-            <Time />
-            <Time />
-            <Time />
-            <Time />
-            <Time />
+            <Time time={"12:00 PM"} />
+            <Time time={"12:30 PM"} />
+            <Time time={"01:30 PM"} />
+            <Time time={"02:00 PM"} />
+            <Time time={"02:30 PM"} />
           </div>
         </div>
+
+        <div className={stylesBook.dayDetailsContainer}>
+          <div className={stylesBook.timePeriods}>
+            <span>Evening</span>
+          </div>
+          <div className={stylesBook.timeContainer}>
+            <Time time={"06:00 PM"} />
+            <Time time={"06:30 PM"} />
+            <Time time={"07:00 PM"} />
+            <Time time={"07:30 PM"} />
+          </div>
+        </div>
+        <div className={stylesBook.BooknowbtnContainer}>
+          <button className={stylesBook.BookNowBtn} onClick={handleBook}>
+            Book Now
+          </button>
+        </div>
+        <ToastContainer
+          position="top-center"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+        />
       </div>
     </>
   );
 }
 
-function Time() {
+function Time({ time, disableClick }) {
+  const { selectedTime, setSelectedTime, setBookedHospitalTime } = useMedify();
+
+  function handleClick() {
+    setBookedHospitalTime(time);
+    setSelectedTime(time);
+  }
+  const select = selectedTime === time;
+
   return (
-    <div className={stylesBook.time}>
-      <span>12:00</span>
+    <div
+      className={
+        disableClick
+          ? stylesBook.time
+          : classNames(stylesBook.time, select && stylesBook.timeBlue)
+      }
+      onClick={!disableClick ? handleClick : undefined}
+    >
+      <span
+        className={` ${stylesBook.timeText} ${
+          select && stylesBook.timeBlueText
+        } `}
+      >
+        {time}
+      </span>
     </div>
   );
 }
 
-function BookedDateTime() {
-  return (
-    <div className={styles.bookedContainer}>
-      <Time />
-      <div className={styles.bookedDate}>
-        <span>20 April 2024</span>
-      </div>
-    </div>
-  );
+function BookedDateTime({ children }) {
+  return <div className={styles.bookedContainer}>{children}</div>;
 }
 
-export default MedicalCard;
+export { MedicalCard, BookedDateTime, Time };

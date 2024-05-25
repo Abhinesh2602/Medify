@@ -8,6 +8,7 @@ import HospitalDetails from "./HospitalDetails";
 
 function MyBookingPage() {
   const mybooking = true;
+
   return (
     <div>
       <Header />

@@ -2,7 +2,7 @@ import DetailPage from "./DetailPage/DetailPage.jsx";
 import Home from "./HomePage/Home";
 import MyBookingPage from "./MyBookingPage/MyBookingPage.jsx";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-
+import { MedifyProvider } from "./services/MedifyContextProvider.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -23,7 +23,11 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <MedifyProvider>
+      <RouterProvider router={router} />
+    </MedifyProvider>
+  );
 }
 
 export default App;
